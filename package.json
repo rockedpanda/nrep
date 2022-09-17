@@ -1,8 +1,11 @@
 {
   "name": "nrep",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "text grep tool write by Node.js, 使用Node.js编写的类似grep的文本过滤工具",
   "main": "nrep.js",
+  "bin":{
+    "nrep":"./nrep.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

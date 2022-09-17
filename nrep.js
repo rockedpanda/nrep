@@ -1,10 +1,12 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const readline = require('readline');
 const args = process.argv.slice(2);
 
-let i = 0;
+let i = 0,j=0,k=0;
 let sum = 0;
 let a=0,b=0,c=0,d=0,e=0,f=0,g={};
+let A=[],B=[],C=[],D={},E={},F={};
 
 let re = args[0]; //默认第一个参数是待执行的函数语句
 let autoLog = false;
@@ -19,7 +21,7 @@ let main = {
     timeStr:'min',
     isTimeLine: false,
     checkTimeLine:(x)=>{
-        this.isTimeLine = /2019|2020|2021/.test(x.slice(0,20)); //简单起见,按照前20字符包含2019或2020作为是否含时间的判定依据
+        this.isTimeLine = /20[0-9][0-9]/.test(x.slice(0,20)); //简单起见,按照前20字符包含2019或2020作为是否含时间的判定依据
     }
 };
 
@@ -95,13 +97,3 @@ rl.on('line', (line) => {
 rl.on('close',()=>{
     main.endFunc();
 });
-
-/** sourceFile内容格式
- * function(x, rowIndex){
- *    //一般使用x代替行内容
- *    //可以使用的全局变量包括: a=0,b=0,c=0,d=0,e=0,f=0,g={}
- *    //临时内容可以存放到g对象的自定义属性下
- *    //函数不一定有返回值
- *    //可以在函数中使用log或者console.log输出日志
- * }
- */
