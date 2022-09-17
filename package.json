@@ -1,0 +1,19 @@
+{
+  "name": "nrep",
+  "version": "0.1.0",
+  "description": "text grep tool write by Node.js, 使用Node.js编写的类似grep的文本过滤工具",
+  "main": "nrep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockedpanda/nrep.git"
+  },
+  "author": "rockedpanda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rockedpanda/nrep/issues"
+  },
+  "homepage": "https://github.com/rockedpanda/nrep#readme"
+}

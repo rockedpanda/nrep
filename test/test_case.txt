@@ -1,0 +1,5 @@
+cat nrep.js | node nrep.js "sum+=x.length;log(i)" -e "log(sum,i,sum/i>>0)"
+cat nrep.js | node nrep.js "sum+=x.length" -e "log(sum,i,sum/i>>0)" -p
+cat nrep.js | node nrep.js "/\d/.test(x)?log(x):0"
+cat nrep.js | node nrep.js "/i/.test(x)?x:''" -p
+cat nrep.js | node nrep.js "sum+=x.length;log(i)" -s "a=Date.now()" -e "log(sum,i,sum/i>>0);log(Date.now()-a)"
