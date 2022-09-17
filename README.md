@@ -4,7 +4,8 @@ text grep tool write by Node.js, 使用Node.js编写的类似grep的文本过滤
 
 ## 使用说明
 
-* cat catlina.out |node nrep.js -p "x.length"
+* cat catlina.out |node nrep.js "x.length"
+* cat catlina.out |node nrep.js "x.length" -p
 * cat catlina.out |node nrep.js -p -c count.js
 * cat catlina.out |node nrep.js -p -c count.js -e "log(a,b,a/b)"
 

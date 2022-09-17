@@ -9,6 +9,9 @@ let a=0,b=0,c=0,d=0,e=0,f=0,g={};
 let A=[],B=[],C=[],D={},E={},F={};
 
 let re = args[0]; //默认第一个参数是待执行的函数语句
+if(args[0]==='-p'){
+    re = args[1]||'';
+}
 let autoLog = false;
 let sourceFile = '';
 let inputFile = '';
@@ -26,7 +29,7 @@ let main = {
 };
 
 args.forEach((arg,argIndex)=>{
-    // console.log(arg, argIndex);
+    //console.log(arg, argIndex);
     if(arg=='-p'){
         autoLog = true;
     }else if(arg=='-s'){
@@ -59,6 +62,11 @@ if(args.length === 0){
     console.log('需要输入过滤方法');
     return;
 }
+if(!autoLog && !sourceFile){
+    if(re.indexOf('log(')===-1){
+        autoLog = true;
+    }
+}
 if(autoLog && !sourceFile){
     re = `log(${re})`;
 }
@@ -67,9 +75,8 @@ if(re.indexOf('=>')==-1 && !sourceFile){
     re = `(x)=>{${re}}`;
 }
 
-function log(){
-    console.log.apply(console, arguments);
-}
+const log = console.log.bind(console);
+
 // console.log('>>>>'+re+'<<<<');
 main.reFunc = eval(re);
 if(Array.isArray(main.reFunc)){
